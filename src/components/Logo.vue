@@ -1,7 +1,6 @@
 <template>
-  <div>
-      <h1>prova</h1>
-      <img src="../assets/logo.png" alt="">
+  <div class="logo_container">
+      <img src="../assets/logo.png" alt="logo" class="logo_image">
   </div>
 </template>
 
@@ -11,6 +10,16 @@ name : "Logo"
 }
 </script>
 
-<style>
+<style lang="scss">
+.logo_container{
+  background-color: blue;
+  padding: 50px;
+  height: 40%;
+  text-align: center;
 
+
+  .logo_image{
+    height: 100%;
+  }
+}
 </style>
