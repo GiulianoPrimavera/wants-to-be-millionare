@@ -60,19 +60,17 @@ p{
 
 .text_container p{
     margin: 10px;
-
+    padding: 14px 30px;
+    border: 2px solid white;
 }
-/* 
+
 .text_container p::before{
     content: "";
-    background-color: red;
     position: absolute;
-    height: 24px;
-    width: 24px;
-    border: 2px solid white;
-    display: inline-block;
-    transform: translate(-50%) rotate(45deg);
-} */
+    top: 0;
+    bottom: 0;
+    
+}
 .question{
     margin: 0 auto;
 }
