@@ -1,15 +1,18 @@
 <template>
   <main>
     <Logo></Logo>
+
+    <Quiz></Quiz>
   </main>
 </template>
 
 <script>
 import Logo from "./components/Logo.vue"
+import Quiz from "./components/Quiz.vue"
 
 export default {
 name : "App",
-components: { Logo }, 
+components: { Logo, Quiz }, 
 
 }
 </script>
