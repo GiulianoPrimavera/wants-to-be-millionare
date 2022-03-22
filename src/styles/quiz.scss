@@ -24,6 +24,7 @@ p{
     border-bottom: 3.5px solid white;
     border-radius: 5px;
     position: relative;
+    cursor: pointer;
 }
 
 .text_container p::before{
@@ -58,6 +59,7 @@ p{
 
 .question{
     margin: 20px auto;
+    pointer-events: none;
 }
 .answer_container{
     display: flex;
