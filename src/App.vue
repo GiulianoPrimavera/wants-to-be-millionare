@@ -18,6 +18,8 @@ components: { Logo, Quiz },
 </script>
 
 <style lang="scss">
+@import "styles/quiz.scss";
+
 *{
   margin: 0;
   padding: 0;
@@ -26,4 +28,5 @@ components: { Logo, Quiz },
 main{
   height: 100vh;
 }
+
 </style>
