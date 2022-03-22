@@ -66,4 +66,12 @@ p{
     flex-wrap: wrap;
     justify-content: space-around;
 
+    .answer{
+        width: calc(100% / 2);
+        text-align: center;
+
+        p{
+            width: 60%;
+        }
+    }
 }
