@@ -2,7 +2,7 @@
   <main>
     <Logo></Logo>
 
-    <Quiz :quizList="quizList[0]"></Quiz>
+    <Quiz :quizList="quizList"></Quiz>
   </main>
 </template>
 
@@ -38,19 +38,30 @@ data(){
           },
         ]
       },
+      {
+        "domanda" : "quanti numeri ha il pi greco? ",
+        "risposte" : [
+          {
+            "risposta": "3 numeri",
+            "ToF" : false
+          },
+          {
+            "risposta": "10 000 numeri",
+            "ToF" : false
+          },
+          {
+            "risposta": "2000",
+            "ToF" : false
+          },
+          {
+            "risposta": "infiniti numeri",
+            "ToF" : true
+          },
+        ]
+      },
     ]
   }
-},
-methods:{
-  prova(){
-    console.log(this.quizList[0]);
-
-  }
-},
-mounted(){
-  this.prova()
 }
-
 }
 </script>
 
