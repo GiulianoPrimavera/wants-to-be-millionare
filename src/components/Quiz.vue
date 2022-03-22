@@ -4,26 +4,26 @@
     <div class="q_n_a_container">
         <!-- domanda --> 
         <div class="text_container question">
-            <p>the quick brown fox jumos over the lazy dog</p>
+            <p>the quick brown fox jumps over the lazy dog</p>
         </div>
 
         <!-- possibili risposte -->
         <div class="answer_container">
             
             <div class="text_container answer">
-                <p>the quick brown fox jumos over the lazy dog</p>
+                <p>the quick brown fox jumps over the lazy dog</p>
             </div>
             
             <div class="text_container answer">
-                <p>the quick brown fox jumos over the lazy dog</p>
+                <p>the quick brown fox jumps over the lazy dog</p>
             </div>
             
             <div class="text_container answer">
-                <p>the quick brown fox jumos over the lazy dog</p>
+                <p>the quick brown fox jumps over the lazy dog</p>
             </div>
 
             <div class="text_container answer">
-                <p>the quick brown fox jumos over the lazy dog</p>
+                <p>the quick brown fox jumps over the lazy dog</p>
             </div>
             
         </div>
@@ -50,6 +50,7 @@ p{
     color: white;
     font-size: 1.6em;
     display: inline-block;
+    height: 60px;
 }
 .q_n_a_container{
     width: 60%;
@@ -61,16 +62,39 @@ p{
 .text_container p{
     margin: 10px;
     padding: 14px 30px;
-    border: 2px solid white;
+    border-top: 3.5px solid white;
+    border-bottom: 3.5px solid white;
+    border-radius: 5px;
+    position: relative;
 }
 
 .text_container p::before{
     content: "";
     position: absolute;
-    top: 0;
+    top: 4px;
     bottom: 0;
-    
+    left: -19px;
+    border-left: 4px solid white;
+    border-bottom: 4px solid white;
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    border-radius: 5px;
 }
+.text_container p::after{
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 0;
+    right: -19px;
+    border-right: 4px solid white;
+    border-top: 4px solid white;
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    border-radius: 5px;
+}
+
 .question{
     margin: 0 auto;
 }
