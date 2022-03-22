@@ -71,7 +71,7 @@ p{
 .text_container p::before{
     content: "";
     position: absolute;
-    top: 4px;
+    top: 5px;
     bottom: 0;
     left: -19px;
     border-left: 4px solid white;
@@ -84,7 +84,7 @@ p{
 .text_container p::after{
     content: "";
     position: absolute;
-    top: 4px;
+    top: 5px;
     bottom: 0;
     right: -19px;
     border-right: 4px solid white;
@@ -94,6 +94,10 @@ p{
     transform: rotate(45deg);
     border-radius: 5px;
 }
+.text_container p:hover, p:hover::before, p:hover::after{
+    background-color: red;
+}
+
 
 .question{
     margin: 0 auto;
