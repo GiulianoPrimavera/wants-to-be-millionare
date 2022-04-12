@@ -59,6 +59,27 @@ data(){
           },
         ]
       },
+      {
+        "domanda" : "in che anno è nato Giulietta? ",
+        "risposte" : [
+          {
+            "risposta": "1984 a.c.",
+            "ToF" : false
+          },
+          {
+            "risposta": "anno 0",
+            "ToF" : false
+          },
+          {
+            "risposta": "2000",
+            "ToF" : true
+          },
+          {
+            "risposta": "2020",
+            "ToF" : false
+          },
+        ]
+      },
     ]
   }
 }

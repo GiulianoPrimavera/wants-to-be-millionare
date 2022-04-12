@@ -1,23 +1,22 @@
 <template>
   <div class="quiz_container">
-
     <div class="q_n_a_container">
-        <!-- domanda --> 
-        <div class="text_container question">
-            <p>{{currentQuiz[0].domanda}}</p>
-        </div>
+      <!-- domanda -->
+      <div class="text_container question">
+        <p>{{ currentQuiz[0].domanda }}</p>
+      </div>
 
-        <!-- possibili risposte -->
-        <div class="answer_container">
-            
-            <div class="text_container answer" v-for="risposta in currentQuiz[0].risposte" :key="risposta.id">
-                <p>{{risposta.risposta}}</p>
-            </div>
-            
+      <!-- possibili risposte -->
+      <div class="answer_container">
+        <div
+          class="text_container answer"
+          v-for="risposta in currentQuiz[0].risposte"
+          :key="risposta.id"
+        >
+          <p>{{ risposta.risposta }}</p>
         </div>
-
+      </div>
     </div>
-
   </div>
 </template>
 
@@ -42,7 +41,26 @@ methods: {
 
         //qui vado a recuperare la domanda random dall'array di domande
         this.currentQuiz = this.quizList.slice(rand, rand + 1);
-        console.log(this.currentQuiz);
+        console.log(this.currentQuiz[0].risposte);
+
+        this.shuffleArray(this.currentQuiz[0].risposte);
+    },
+    shuffleArray(array) {
+        let currentIndex = array.length,  randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
     }
 },
 beforeMount(){
@@ -52,5 +70,4 @@ beforeMount(){
 </script>
 
 <style>
-
 </style>
