@@ -45,6 +45,9 @@ methods: {
 
         this.shuffleArray(this.currentQuiz[0].risposte);
     },
+    /**
+     * funzione che mischia elementi all'interno di un array (spudoratamente copiata da stack over flow)
+     */
     shuffleArray(array) {
         let currentIndex = array.length,  randomIndex;
 
