@@ -13,7 +13,7 @@
           v-for="risposta in currentQuiz[0].risposte"
           :key="risposta.id"
         >
-          <p>{{ risposta.risposta }}</p>
+          <p @click="clic(risposta)">{{ risposta.risposta }}</p>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@ methods: {
 
         //qui vado a recuperare la domanda random dall'array di domande
         this.currentQuiz = this.quizList.slice(rand, rand + 1);
-        console.log(this.currentQuiz[0].risposte);
+        // console.log(this.currentQuiz[0].risposte);
 
         this.shuffleArray(this.currentQuiz[0].risposte);
     },
@@ -64,6 +64,14 @@ methods: {
         }
 
         return array;
+    },
+    clic(risposta){
+
+      if(risposta.ToF === false){
+        //se la risposta è falsa allora metto lo sfondo del paragrafo a rosso
+      }else{
+        //se la risposta è vera allora metto lo sfondo del paragrafo a verde 
+      }
     }
 },
 beforeMount(){
