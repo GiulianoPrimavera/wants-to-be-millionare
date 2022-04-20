@@ -10,10 +10,10 @@
       <div class="answer_container">
         <div
           class="text_container answer"
-          v-for="risposta in currentQuiz[0].risposte"
-          :key="risposta.id"
+          v-for="(risposta, i) in currentQuiz[0].risposte"
+          :key="i"
         >
-          <p @click="clic(risposta)">{{ risposta.risposta }}</p>
+          <p @click="clic(risposta, i)" :id="i">{{ risposta.risposta }}</p>
         </div>
       </div>
     </div>
@@ -65,12 +65,16 @@ methods: {
 
         return array;
     },
-    clic(risposta){
+    clic(risposta, i){
+
+      const currentP = document.getElementById(i);
 
       if(risposta.ToF === false){
-        //se la risposta è falsa allora metto lo sfondo del paragrafo a rosso
+        // se la risposta è falsa allora metto lo sfondo del paragrafo a rosso
+        currentP.style.backgroundColor = "red";
       }else{
         //se la risposta è vera allora metto lo sfondo del paragrafo a verde 
+        currentP.style.backgroundColor = "green";
       }
     }
 },
