@@ -17,15 +17,6 @@
         </div>
       </div>
     </div>
-
-    <div 
-    v-if="rispostaCorretta === true"
-    class="next_question"
-    >
-      <div class="text_container answer">
-          <p >prossima domanda</p>
-        </div> 
-    </div>
   </div>
 </template>
 
@@ -86,6 +77,7 @@ methods: {
         //se la risposta è vera allora metto lo sfondo del paragrafo a verde 
         currentP.style.backgroundColor = "green";
         this.rispostaCorretta = true;
+        this.$emit('getRispostaCorretta' ,this.rispostaCorretta);
       }
     }
 },

@@ -2,7 +2,13 @@
   <main>
     <Logo></Logo>
 
-    <Quiz :quizList="quizList"></Quiz>
+    <Quiz :quizList="quizList" @getRispostaCorretta="getRisposta"></Quiz>
+
+    <div v-if="rispostaCorretta === true" class="screen_blocker">
+      <div class="text_container answer next_question">
+        <p >prossima domanda</p>
+      </div> 
+    </div>
   </main>
 </template>
 
@@ -81,6 +87,12 @@ data(){
         ]
       },
     ],
+    rispostaCorretta: false
+  }
+},
+methods: {
+  getRisposta(value){
+    this.rispostaCorretta = value;
   }
 }
 }

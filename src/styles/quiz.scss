@@ -1,3 +1,7 @@
+main{
+    position: relative;
+}
+
 .quiz_container{
     background-color: darkblue;
     height: 60%;
@@ -17,11 +21,6 @@ p{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-}
-.next_question{
-    display: flex;
-    margin: 0 auto;
-    padding: 20px 0;
 }
 
 .text_container p{
@@ -81,4 +80,21 @@ p{
             width: 60%;
         }
     }
+}
+
+.screen_blocker{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.next_question{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 40%);
 }
