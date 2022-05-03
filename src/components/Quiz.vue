@@ -29,7 +29,10 @@ props : {
 data(){
     return{
       currentQuiz: [],
-      rispostaCorretta: false
+      rispostaStatus: {
+        "value": false,
+        "message": "" 
+      }
     }
 },
 methods: {
@@ -73,12 +76,15 @@ methods: {
       if(risposta.ToF === false){
         // se la risposta è falsa allora metto lo sfondo del paragrafo a rosso
         currentP.style.backgroundColor = "red";
+        this.rispostaStatus["value"] = true;
+        this.rispostaStatus["message"] = "risposta sbagliata";
       }else{
         //se la risposta è vera allora metto lo sfondo del paragrafo a verde 
         currentP.style.backgroundColor = "green";
-        this.rispostaCorretta = true;
-        this.$emit('getRispostaCorretta' ,this.rispostaCorretta);
+        this.rispostaStatus["value"] = true;
+        this.rispostaStatus["message"] = "risposta corretta";
       }
+      this.$emit('getrispostaStatus' ,this.rispostaStatus);
     }
 },
 beforeMount(){

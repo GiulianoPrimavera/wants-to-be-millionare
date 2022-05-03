@@ -2,11 +2,14 @@
   <main>
     <Logo></Logo>
 
-    <Quiz :quizList="quizList" @getRispostaCorretta="getRisposta"></Quiz>
+    <Quiz :quizList="quizList" @getrispostaStatus="getRisposta"></Quiz>
 
-    <div v-if="rispostaCorretta === true" class="screen_blocker">
-      <div class="text_container answer next_question">
-        <p >prossima domanda</p>
+    <div v-if="rispostaStatus.value === true" class="screen_blocker">
+      <div class="text_container answer next_question" @click="onToTheNextQuestion">
+        <p v-if="rispostaStatus.message === 'risposta sbagliata'" class="risposta_sbagliata">{{ rispostaStatus.message.toUpperCase() }}</p>
+        <p v-else class="risposta_corretta">{{ rispostaStatus.message.toUpperCase() }}</p>
+        <br>
+        <p>prossima domanda</p>
       </div> 
     </div>
   </main>
@@ -87,12 +90,20 @@ data(){
         ]
       },
     ],
-    rispostaCorretta: false
+    rispostaStatus: {
+      "value": false,
+      "message": ""
+    }
   }
 },
 methods: {
   getRisposta(value){
-    this.rispostaCorretta = value;
+    this.rispostaStatus["value"] = value["value"];
+    this.rispostaStatus["message"] = value["message"];
+    console.log(this.rispostaStatus);
+  },
+  onToTheNextQuestion(){
+
   }
 }
 }
